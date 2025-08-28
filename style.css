@@ -1,0 +1,863 @@
+/* Paleta de colores */
+:root {
+    --bs-light: #424547;
+    --bs-dark: #ffffff;
+    --bs-secondary: #E9ECEF;
+    --bs-primary: #3d3973;
+    --bs-white: #FFFFFF;
+}
+
+/* Tipografía */
+body {
+  padding: 10%;
+  padding-bottom: 0%;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  background: -webkit-linear-gradient(90deg, #e6e9ff,#f4f4f4);background: linear-gradient(90deg, #dee7ff,#f4f4f4);}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+
+
+/* Colores personalizados */
+.bg-dark {
+    background-color: var(--bs-dark) !important;
+}
+
+.text-white {
+    color: var(--bs-light-subtle) !important;
+}
+
+.text-acento {
+    color: var(--bs-primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: var(--bs-dark);
+}
+
+.btn-primary:hover {
+    background-color: #5373c6;
+    border-color: #5373c6;
+    transition: background-color 1s
+}
+
+.header{
+    z-index: 1;
+    position: relative;
+}
+
+/* Estilo para la animación hover del menú */
+.navbar-nav .nav-item {
+    position: relative;
+}
+
+.navbar-nav .nav-link {
+    color: #3960c4  !important; /* Color predeterminado de los enlaces */
+    transition: color 0.3s ease-in-out;
+}
+
+
+.navbar-nav .nav-item:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #3d3973;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item:hover:after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3d3973 !important; /* Color al pasar el cursor */
+}
+
+/* Estilo para el menú de navegación al hacer scroll */
+.scrolled {
+    background-color: rgba(54, 50, 108, 0.726) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    padding: 0.3rem 2rem; /* Ajusta este valor */
+    margin-top: 20px;
+}
+
+.scrolled .nav-link {
+    color: white !important;
+    font-size: small;
+}
+
+.scrolled .nav-link:hover {
+    color: white !important; /* Color al pasar el cursor */
+}
+
+/* Ocultar el logo al hacer scroll */
+.brand-hidden {
+    display: none !important;
+    transition: display 0.5s ease-in-out;
+}
+
+/* Estilo para las píldoras de la descripción */
+.puesto-pildora {
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    border-radius: 1.5rem;
+    /* Bordes redondeados para el efecto de píldora */
+    border: 1px solid var(--bs-primary);
+    color: #3960c4;
+    font-weight: bold;
+}
+
+/* Float Shadow */
+.hvr-float-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.hvr-float-shadow:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    /* W3C */
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.hvr-float-shadow:hover,
+.hvr-float-shadow:focus,
+.hvr-float-shadow:active {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    transition: background-color 0.3s
+        /* move the element up by 5px */
+}
+
+.hvr-float-shadow:hover:before,
+.hvr-float-shadow:focus:before,
+.hvr-float-shadow:active:before {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+
+/* Estilo para el hover del botón de contacto en fondo claro */
+.btn-outline-dark:hover {
+    background-color: var(--bs-primary) !important;
+    color: var(--bs-white) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+/*------------------------------ EXPERIENCIA --------------------------------*/
+.experiencia{
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+/* Animación para las tarjetas de experiencia */
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /* Eleva la tarjeta 5px */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Añade una sombra suave */
+}
+
+/* Estilo para la línea de tiempo de experiencia laboral */
+.timeline {
+    position: relative;
+    padding: 0;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    /* Coloca la línea a la izquierda */
+    width: 2px;
+    background-color: var(--bs-primary);
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 60px;
+    /* Espacio para el ícono y la línea */
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 10px;
+    /* Alinea el ícono con la línea */
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.timeline-content {
+    background-color: var(--bs-secondary);
+    border-left: 3px solid var(--bs-primary);
+    /* Un borde que conecta la tarjeta a la línea */
+    padding: 1rem;
+}
+
+/* Ajustes para las tarjetas de experiencia */
+.timeline-content.card {
+    color: var(--bs-primary) !important;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de hover en las tarjetas */
+.timeline-content.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Espacio entre secciones */
+section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Estilo para el botón de subir arriba */
+.btn-subir-arriba {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    color: var(--bs-light);
+    padding: 15px;
+    border-radius: 50%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.btn-subir-arriba:hover {
+    background-color: #5d58a638;
+    /* Un tono más claro de tu color de acento */
+}
+
+/* iniciales */
+.iniciales {
+    font-family: "Londrina Shadow", sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+/*---------------------PROYECTOS----------------------*/
+/* Estilo para la galería de proyectos */
+/* Estilos para las tarjetas de proyecto (projects-card) */
+.projects-card {
+    --card-bg: #ffffff;
+    --card-accent: #7c3aed; /* Puedes cambiar este color */
+    --card-text: #1e293b;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+
+    width: 100%; /* Se ajusta al contenedor de columna */
+    height: 350px; /* Altura fija para uniformidad */
+    background: var(--card-bg);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: sans-serif;
+    color: var(--card-text);
+}
+
+.projects-card__shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projects-card__glow {
+    position: absolute;
+    inset: -10px;
+    background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.3) 0%, rgba(124, 58, 237, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.projects-card__content {
+    padding: 1.25em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    position: relative;
+    z-index: 2;
+}
+
+.projects-card__badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #10b981;
+    color: white;
+    padding: 0.25em 0.5em;
+    border-radius: 999px;
+    font-size: 0.7em;
+    font-weight: 600;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s ease 0.1s;
+}
+
+.projects-card__image {
+    width: 100%;
+    height: 100px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.projects-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.projects-card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.projects-card__title {
+    color: var(--card-text);
+    font-size: 1.1em;
+    margin: 0;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.projects-card__description {
+    color: var(--card-text);
+    font-size: 0.75em;
+    margin: 0;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.projects-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.projects-card__button {
+    width: 45%;
+    height: 28px;
+    background: #2e3968;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    text-decoration: none;
+}
+
+/* Hover Effects */
+/* Estilos para las tarjetas de proyecto */
+.card {
+    --card-bg: #ffffff;
+    --card-accent: #7c3aed; /* Puedes cambiar este color */
+    --card-text: #1e293b;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+
+    width: 100%; /* Se ajusta al contenedor de columna */
+    height: 350px; /* Altura fija para uniformidad */
+    background: var(--card-bg);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: sans-serif;
+    color: var(--card-text);
+}
+
+.card__shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card__glow {
+    position: absolute;
+    inset: -10px;
+    background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.3) 0%, rgba(124, 58, 237, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card__content {
+    padding: 1.25em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    position: relative;
+    z-index: 2;
+}
+
+.card__badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #10b981;
+    color: white;
+    padding: 0.25em 0.5em;
+    border-radius: 999px;
+    font-size: 0.7em;
+    font-weight: 600;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s ease 0.1s;
+}
+
+.card__image {
+    width: 100%;
+    height: 100px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.card__title {
+    color: var(--card-text);
+    font-size: 1.1em;
+    margin: 0;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.card__description {
+    color: var(--card-text);
+    font-size: 0.75em;
+    margin: 0;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.card__button {
+    width: 45%;
+    height: 28px;
+    background: #2e3968;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    text-decoration: none;
+}
+
+/* Hover Effects */
+.projects-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+.projects-card:hover .card__shine {
+    opacity: 1;
+    animation: shine 3s infinite;
+}
+
+.projects-card:hover .card__glow {
+    opacity: 1;
+}
+
+.projects-card:hover .card__badge {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+
+.projects-card:hover .card__image {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.projects-card:hover .card__title {
+    color: var(--card-accent);
+    transform: translateX(2px);
+}
+
+.projects-card:hover .card__description {
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+.projects-card:hover .card__button {
+    transform: scale(1);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2);
+}
+
+.projects-card:hover .card__button i {
+    animation: pulse 1.5s infinite;
+}
+
+/* Active State */
+.projects-card:active {
+    transform: translateY(-5px) scale(0.98);
+}
+
+/* Animations */
+@keyframes shine {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/*----------------------HABILIDADES--------------------------*/
+
+/* Estilos para el contenedor de la "card" de habilidades */
+.skills-card-container {
+    --border: 1px;
+    --rounded: 16px;
+    width: 100%;
+    max-width: 700px; /* Tamaño máximo para el contenedor */
+    min-height: 450px;
+    border-radius: var(--rounded);
+    position: relative;
+    padding: var(--border);
+    background-color: #191c29;
+    
+    /* Animación del borde de colores */
+    background-image: radial-gradient(circle farthest-side at 0 100%, #00ccb1, transparent),
+                      radial-gradient(circle farthest-side at 100% 0, #5ddcff, transparent),
+                      radial-gradient(circle farthest-side at 100% 100%, #3c67e3, transparent),
+                      radial-gradient(circle farthest-side at 0 0, #4e00c2, #0000);
+    background-size: 400% 400%;
+    animation: bg-spin 3s linear infinite;
+    
+    /* El blur para el resplandor */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+/* Animación del fondo */
+@keyframes bg-spin {
+    25% { background-position: right 20% bottom 40%; }
+    75% { background-position: left 45% top 20%; }
+}
+
+/* Estilos para los puntos de animación */
+.skills-card-container .points_wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: calc(100% - (var(--border) * 4));
+    height: calc(100% - (var(--border) * 4));
+    border-radius: calc(var(--rounded) - 4px);
+    pointer-events: none;
+    z-index: 80;
+}
+
+.skills-card-container .point {
+    --sz-point: 4px;
+    top: -8px;
+    position: absolute;
+    animation: floating-points infinite ease-in-out;
+    pointer-events: none;
+    width: var(--sz-point);
+    height: var(--sz-point);
+    background-color: #5ddcff;
+    border-radius: 9999px;
+}
+
+/* Animación de los puntos flotantes */
+@keyframes floating-points {
+    0% { transform: translate(0, 0); }
+    95% { opacity: 0; }
+    100% { opacity: 0; transform: translate(calc(var(--h-card) / 1.75), calc(var(--h-card) / 1.5)); }
+}
+
+/* Ajustes para los íconos */
+.skill-category-group i {
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-category-group i:hover {
+    transform: scale(1.1);
+    color: #5ddcff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilo para los nuevos iconos de redes sociales */
+.social-icons ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.social-icons ul li a {
+    width: 60px;
+    /* Reducimos el tamaño para que se vea mejor */
+    height: 60px;
+    background-color: var(--bs-light);
+    /* Fondo claro de tu portafolio */
+    text-align: center;
+    line-height: 60px;
+    font-size: 25px;
+    /* Reducimos el tamaño de la fuente */
+    margin: 0 10px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--bs-secondary);
+    /* Borde claro */
+    z-index: 1;
+}
+
+.social-icons ul li a .icon {
+    position: relative;
+    color: var(--bs-dark);
+    /* Color de texto oscuro */
+    transition: .5s;
+    z-index: 3;
+}
+
+.social-icons ul li a:hover .icon {
+    color: var(--bs-white);
+    transform: rotateY(360deg);
+}
+
+.social-icons ul li a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    /* Color de relleno, lo ajustaremos más abajo */
+    transition: .5s;
+    z-index: 2;
+}
+
+.social-icons ul li a:hover:before {
+    top: 0;
+}
+
+/* Colores de redes sociales */
+.social-icons ul li:nth-child(1) a:before {
+    background: #333;
+    /* Usamos un color oscuro para GitHub */
+}
+
+.social-icons ul li:nth-child(2) a:before {
+    background: #0077B5;
+    /* Color de LinkedIn */
+}
+
+.social-icons ul li:nth-child(3) a:before {
+    background: #DD4B39;
+    /* Color de Email */
+}
+
+/*---------------------------RESPONSIVE-------------------------*/
+@media (max-width: 768px) {
+    .rounded-5 {
+        max-width: 200px;
+    }
+    .my-3{
+        justify-content: center
+    }
+    /* Estilo para el menú de navegación al hacer scroll */
+    .scrolled {
+        background-color: rgba(61, 57, 115, 0.8) !important;
+        backdrop-filter: blur(10px);
+        border-radius: 50px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.5rem 1.5rem;
+    }
+    
+    /* Color de las letras del menú al hacer scroll */
+    .scrolled .nav-link {
+        color: white !important;
+    }
+    
+    /* Para el efecto en pantallas grandes, el logo debe ser visible */
+    .scrolled .nav-brand {
+        display: none !important;
+    }
+
+    /*SECCION EXPERIENCIA*/
+    .experiencia{
+        padding: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ANIMACION FOTO*/
+/* Estilo para la animación de flotación de la imagen */
+.flotante {
+    animation: flotar 3s ease-in-out infinite;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+    }
+    50% {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+    }
+}
