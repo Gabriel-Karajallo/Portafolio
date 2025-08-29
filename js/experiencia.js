@@ -11,6 +11,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
     
-    // Exporta la función para que esté disponible globalmente
     window.toggleButtonText = toggleButtonText;
 });
