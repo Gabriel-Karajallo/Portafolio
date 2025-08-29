@@ -7,7 +7,6 @@
     --bs-white: #FFFFFF;
 }
 
-/* Tipografía */
 body {
   padding: 10%;
   padding-bottom: 0%;
@@ -17,6 +16,7 @@ body {
   font-style: normal;
   background: -webkit-linear-gradient(90deg, #e6e9ff,#f4f4f4);background: linear-gradient(90deg, #dee7ff,#f4f4f4);}
 
+  /* Tipografía */
 h1,
 h2,
 h3,
@@ -265,6 +265,25 @@ h6,
 /* Efecto de hover en las tarjetas */
 .timeline-content.card:hover {
     transform: translateY(-5px);
+}
+
+.card-text{
+    font-family: "Nunito", sans-serif;
+}
+
+.leer{
+    font-family: "Nunito", sans-serif;
+    margin-top: 10px;
+}
+
+.project-description {
+    font-family: "Nunito", sans-serif;
+    color: #495057; /* Un gris oscuro para que sea legible */
+    text-align: justify; /* Justifica el texto para un aspecto más limpio */
+    line-height: 1.6; /* Aumenta el espaciado entre líneas para una mejor legibilidad */
+    font-size: 1rem; /* Mantiene un tamaño de fuente estándar y legible */
+    padding: 1rem; /* Añade un poco de espacio alrededor del texto */
+    border-radius: 8px; /* Redondea las esquinas */
 }
 
 /* Espacio entre secciones */
@@ -713,7 +732,8 @@ section {
     display: flex;
     justify-content: center;
     padding: 0;
-    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
     list-style: none;
 }
 
@@ -778,13 +798,23 @@ section {
     /* Color de LinkedIn */
 }
 
-.social-icons ul li:nth-child(3) a:before {
+.social-icons ul li:nth-child(3) a::before {
+  content: "";
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+.social-icons ul li:nth-child(4) a:before {
     background: #DD4B39;
     /* Color de Email */
 }
 
 /*---------------------------RESPONSIVE-------------------------*/
 @media (max-width: 768px) {
+    body {
+        padding: 5%;
+        padding-bottom: 0%;
+    }
     .rounded-5 {
         max-width: 200px;
     }
@@ -815,6 +845,28 @@ section {
     /*SECCION EXPERIENCIA*/
     .experiencia{
         padding: 0;
+    }
+
+    .timeline {
+        display: block !important;
+        padding-left: 0; /* Elimina el padding de la línea del tiempo */
+        border-left: none; /* <--- ESTA ES LA CLAVE para eliminar la línea vertical */
+    }
+
+    .timeline-item {
+        position: relative; /* Restaura el posicionamiento normal para los móviles */
+        padding-left: 0;
+        margin-bottom: 2rem; /* Añade espacio entre las tarjetas */
+    }
+
+    .timeline-icon {
+        display: none; /* Oculta el círculo y el ícono */
+    }
+
+    .timeline-content {
+        left: auto; /* Restaura la posición por defecto */
+        width: 100%; /* La tarjeta ocupa todo el ancho disponible */
+        transform: none !important; /* Elimina cualquier transformación */
     }
 }
 
