@@ -750,75 +750,78 @@ section {
 /*----------------------HABILIDADES--------------------------*/
 
 /* Estilos para el contenedor de la "card" de habilidades */
-.skills-card-container {
-    --border: 1px;
-    --rounded: 16px;
+/* Estilos del contenedor principal (la "card" grande) */
+.skills-main-card {
+    width: 95%;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    background-image: linear-gradient(144deg, #AF40FF, #a342f3 50%, #00DDEB);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-main-card__content {
+    background: #3d3973; /* Usamos el color que pediste */
+    border-radius: 10px;
     width: 100%;
-    max-width: 700px; /* Tamaño máximo para el contenedor */
-    min-height: 450px;
-    border-radius: var(--rounded);
+    height: 100%;
+    padding: 2rem;
+}
+
+/* --- */
+
+/* Estilos de los iconos como medallas */
+.skill-medal {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    padding: var(--border);
-    background-color: #191c29;
-    
-    /* Animación del borde de colores */
-    background-image: radial-gradient(circle farthest-side at 0 100%, #00ccb1, transparent),
-                      radial-gradient(circle farthest-side at 100% 0, #5ddcff, transparent),
-                      radial-gradient(circle farthest-side at 100% 100%, #3c67e3, transparent),
-                      radial-gradient(circle farthest-side at 0 0, #4e00c2, #0000);
-    background-size: 400% 400%;
-    animation: bg-spin 3s linear infinite;
-    
-    /* El blur para el resplandor */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.5s ease-in-out;
-}
-
-/* Animación del fondo */
-@keyframes bg-spin {
-    25% { background-position: right 20% bottom 40%; }
-    75% { background-position: left 45% top 20%; }
-}
-
-/* Estilos para los puntos de animación */
-.skills-card-container .points_wrapper {
-    position: absolute;
     overflow: hidden;
-    width: calc(100% - (var(--border) * 4));
-    height: calc(100% - (var(--border) * 4));
-    border-radius: calc(var(--rounded) - 4px);
-    pointer-events: none;
-    z-index: 80;
+    cursor: pointer;
+    color: rgb(173, 173, 173);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #212529; /* Un fondo sutil para el icono */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.skills-card-container .point {
-    --sz-point: 4px;
-    top: -8px;
+
+
+/* Efecto de resplandor con pseudo-elemento */
+.skill-medal::before {
+    content: '';
     position: absolute;
-    animation: floating-points infinite ease-in-out;
-    pointer-events: none;
-    width: var(--sz-point);
-    height: var(--sz-point);
-    background-color: #5ddcff;
-    border-radius: 9999px;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    transition: transform 0.5s ease-in-out;
+    transform: rotate(45deg);
+    opacity: 0;
 }
 
-/* Animación de los puntos flotantes */
-@keyframes floating-points {
-    0% { transform: translate(0, 0); }
-    95% { opacity: 0; }
-    100% { opacity: 0; transform: translate(calc(var(--h-card) / 1.75), calc(var(--h-card) / 1.5)); }
-}
-
-/* Ajustes para los íconos */
-.skill-category-group i {
-    transition: transform 0.3s ease-in-out;
-}
-
-.skill-category-group i:hover {
+.skill-medal:hover {
     transform: scale(1.1);
-    color: #5ddcff !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
+
+.skill-medal:hover::before {
+    transform: rotate(0deg) translateX(50%) translateY(50%);
+    opacity: 1;
+}
+
+
+
+
+
+
+
 
 
 
