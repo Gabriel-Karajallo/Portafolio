@@ -784,7 +784,7 @@ section {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    color: rgb(173, 173, 173);
+    color: #adadad;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     background-color: #212529; /* Un fondo sutil para el icono */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
