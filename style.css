@@ -753,25 +753,21 @@ section {
 /* Estilos del contenedor principal (la "card" grande) */
 .skills-main-card {
     width: 95%;
+    border-radius: 15px;
     max-width: 800px;
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-    background-image: linear-gradient(144deg, #AF40FF, #a342f3 50%, #00DDEB);
+    box-shadow: rgba(190, 133, 255, 0.363) 0 15px 30px -5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .skills-main-card__content {
-    background: #3d3973; /* Usamos el color que pediste */
-    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(213, 210, 248, 1) 0%, rgb(255, 255, 255) 100%);
+    border-radius: 15px;
     width: 100%;
     height: 100%;
     padding: 2rem;
 }
-
-/* --- */
 
 /* Estilos de los iconos como medallas */
 .skill-medal {
@@ -784,13 +780,11 @@ section {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    color: #adadad;
+    color: #ffffff;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    background-color: #212529; /* Un fondo sutil para el icono */
+    background-color: #3d3973; /* Un fondo sutil para el icono */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
-
 
 /* Efecto de resplandor con pseudo-elemento */
 .skill-medal::before {
@@ -816,9 +810,57 @@ section {
     opacity: 1;
 }
 
+.skills{
+    color: #888888;
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+}
 
 
 
+/*----------SECCION SOBRE MI--------------------------*/
+/* Estilo para la tarjeta de diálogo (opcional, para la "punta") */
+.dialog-card {
+    position: relative;
+    /* Si quieres una "punta" de diálogo, necesitarás pseudoelementos */
+    /* Este es un ejemplo básico, puedes ajustarlo */
+}
+
+/* Opcional: si quieres una burbuja de diálogo más pronunciada */
+
+.dialog-card::after {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 15px solid transparent;
+    border-right-color: #212529;
+}
+
+@media (max-width: 767.98px) {
+    .dialog-card::after {
+        right: 50%;
+        top: 100%;
+        transform: translateX(-50%) rotate(90deg);
+    }
+}
+
+
+.profile-pic {
+    border: 5px solid #d5d2f8; /* Un borde sutil alrededor de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    width: 200px; /* Asegura un tamaño fijo si la imagen es de placeholder */
+    height: 200px;
+}
+
+/* Ajustes para móviles si es necesario, aunque Bootstrap ya maneja mucho */
+@media (max-width: 767.98px) {
+    .profile-pic {
+        margin-top: 1.5rem; /* Espacio entre el diálogo y la foto en móvil */
+        margin-bottom: 1.5rem;
+    }
+}
 
 
 
@@ -1010,20 +1052,20 @@ section {
 /* Estilo para la animación de flotación de la imagen */
 .flotante {
     animation: flotar 3s ease-in-out infinite;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 15px #ac63ffa1;
 }
 
 @keyframes flotar {
     0% {
         transform: translateY(0);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+        box-shadow: 5px 10px 15px #ac63ff81;
     }
     50% {
         transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        box-shadow: 5px 10px 30px #ac63ff94;
     }
     100% {
         transform: translateY(0);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+        box-shadow: 5px 10px 15px #ac63ff7e;
     }
 }
