@@ -838,15 +838,6 @@ section {
     border-right-color: #212529;
 }
 
-@media (max-width: 767.98px) {
-    .dialog-card::after {
-        right: 50%;
-        top: 100%;
-        transform: translateX(-50%) rotate(90deg);
-    }
-}
-
-
 .profile-pic {
     border: 5px solid #d5d2f8; /* Un borde sutil alrededor de la imagen */
     object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
@@ -854,12 +845,33 @@ section {
     height: 200px;
 }
 
-/* Ajustes para móviles si es necesario, aunque Bootstrap ya maneja mucho */
-@media (max-width: 767.98px) {
-    .profile-pic {
-        margin-top: 1.5rem; /* Espacio entre el diálogo y la foto en móvil */
-        margin-bottom: 1.5rem;
-    }
+/* Estilo para la tarjeta de diálogo (dialog-card) */
+.dialog-card {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.dialog-card p {
+    text-align: justify;
+}
+
+.profile-pic {
+    border: 5px solid #d5d2f8; /* Un borde sutil alrededor de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    width: 300px; /* ¡Cambiado a 300px! */
+    height: 300px; /* ¡Cambiado a 300px! */
+}
+
+/* El resto de tu CSS para el diálogo y adaptabilidad */
+.dialog-card {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.dialog-card p {
+    text-align: justify;
 }
 
 
@@ -1024,6 +1036,31 @@ section {
         width: 100%; /* La tarjeta ocupa todo el ancho disponible */
         transform: none !important; /* Elimina cualquier transformación */
     }
+
+
+    /*-----------SOBRE MI---------------*/
+     .dialog-card::after {
+        right: 50%;
+        top: 100%;
+        transform: translateX(-50%) rotate(90deg);
+    }
+    .profile-pic {
+        margin-top: 1.5rem; /* Espacio entre el diálogo y la foto en móvil */
+        margin-bottom: 1.5rem;
+    }
+    .d-flex.justify-content-center {
+        flex-direction: column;
+        align-items: center;
+    }
+    .dialog-card {
+        margin-bottom: 20px;
+        margin-right: 0 !important;
+    }
+    .profile-pic {
+        width: 230px; /* Puedes ajustar el tamaño para móvil si lo deseas */
+        height: 230px;
+    }
+    
 }
 
 
