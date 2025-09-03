@@ -876,11 +876,11 @@ section {
 
 /*-----------CONTACTO--------------*/
 /* Limita el tamaño de la caja de texto para que solo se pueda redimensionar verticalmente */
-textarea {
-    resize: vertical;
-}
-.form-control {
-    resize: vertical;
+
+textarea.form-control{
+    resize: vertical; 
+    max-height: 300px; 
+    max-width: 100%;
 }
 
 .form{
