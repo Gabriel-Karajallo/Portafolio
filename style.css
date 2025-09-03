@@ -874,108 +874,41 @@ section {
     text-align: justify;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilo para los nuevos iconos de redes sociales */
-.social-icons ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    list-style: none;
+/*-----------CONTACTO--------------*/
+/* Limita el tamaño de la caja de texto para que solo se pueda redimensionar verticalmente */
+textarea {
+    resize: vertical;
+}
+.form-control {
+    resize: vertical;
 }
 
-.social-icons ul li a {
-    width: 60px;
-    /* Reducimos el tamaño para que se vea mejor */
-    height: 60px;
-    background-color: var(--bs-light);
-    /* Fondo claro de tu portafolio */
-    text-align: center;
-    line-height: 60px;
-    font-size: 25px;
-    /* Reducimos el tamaño de la fuente */
-    margin: 0 10px;
-    display: block;
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    border: 3px solid var(--bs-secondary);
-    /* Borde claro */
-    z-index: 1;
-}
-
-.social-icons ul li a .icon {
-    position: relative;
-    color: var(--bs-dark);
-    /* Color de texto oscuro */
-    transition: .5s;
-    z-index: 3;
-}
-
-.social-icons ul li a:hover .icon {
-    color: var(--bs-white);
-    transform: rotateY(360deg);
-}
-
-.social-icons ul li a:before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+.form{
     height: 100%;
-    background: #f00;
-    /* Color de relleno, lo ajustaremos más abajo */
-    transition: .5s;
-    z-index: 2;
 }
 
-.social-icons ul li a:hover:before {
-    top: 0;
-}
 
-/* Colores de redes sociales */
-.social-icons ul li:nth-child(1) a:before {
-    background: #333;
-    /* Usamos un color oscuro para GitHub */
-}
 
-.social-icons ul li:nth-child(2) a:before {
-    background: #0077B5;
-    /* Color de LinkedIn */
-}
 
-.social-icons ul li:nth-child(3) a::before {
-  content: "";
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-}
 
-.social-icons ul li:nth-child(4) a:before {
-    background: #DD4B39;
-    /* Color de Email */
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*---------------------------RESPONSIVE-------------------------*/
 @media (max-width: 768px) {
@@ -1084,8 +1017,91 @@ section {
 
 
 
+/*---------------FOOTER------------------*/
+/* Estilo para los nuevos iconos de redes sociales */
+.social-icons ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    list-style: none;
+}
 
-/* ANIMACION FOTO*/
+.social-icons ul li a {
+    width: 60px;
+    /* Reducimos el tamaño para que se vea mejor */
+    height: 60px;
+    background-color: var(--bs-light);
+    /* Fondo claro de tu portafolio */
+    text-align: center;
+    line-height: 60px;
+    font-size: 25px;
+    /* Reducimos el tamaño de la fuente */
+    margin: 0 10px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var(--bs-secondary);
+    /* Borde claro */
+    z-index: 1;
+}
+
+.social-icons ul li a .icon {
+    position: relative;
+    color: var(--bs-dark);
+    /* Color de texto oscuro */
+    transition: .5s;
+    z-index: 3;
+}
+
+.social-icons ul li a:hover .icon {
+    color: var(--bs-white);
+    transform: rotateY(360deg);
+}
+
+.social-icons ul li a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    /* Color de relleno, lo ajustaremos más abajo */
+    transition: .5s;
+    z-index: 2;
+}
+
+.social-icons ul li a:hover:before {
+    top: 0;
+}
+
+/* Colores de redes sociales */
+.social-icons ul li:nth-child(1) a:before {
+    background: #333;
+    /* Usamos un color oscuro para GitHub */
+}
+
+.social-icons ul li:nth-child(2) a:before {
+    background: #0077B5;
+    /* Color de LinkedIn */
+}
+
+.social-icons ul li:nth-child(3) a::before {
+  content: "";
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+.social-icons ul li:nth-child(4) a:before {
+    background: #DD4B39;
+    /* Color de Email */
+}
+
+
+/*------------ANIMACION FOTO-----------*/
 /* Estilo para la animación de flotación de la imagen */
 .flotante {
     animation: flotar 3s ease-in-out infinite;
