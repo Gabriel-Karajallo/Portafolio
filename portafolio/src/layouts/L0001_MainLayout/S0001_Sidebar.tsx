@@ -29,29 +29,53 @@ export function S0001_Sidebar() {
       >
 
       {/* Identidad */}
-      <div className="flex flex-col items-center md:items-start gap-4">
-        <img
-          src="./foto2.png"
-          alt="Foto de perfil de Gabi"
-          className="
-            w-20 h-20 md:w-24 md:h-24
-            rounded-full
-            object-cover
-            ring-2 ring-neutral-600
-            ring-offset-4 ring-offset-neutral-900
-            shadow-md shadow-black/40
-          "
-        />
+<div className="flex flex-col items-center md:items-start gap-4">
+  <div className="relative w-20 h-20 md:w-24 md:h-24 group">
+    {/* Foto principal */}
+    <img
+      src="./foto.png"
+      alt="Foto de perfil de Gabi"
+      className="
+        absolute inset-0
+        w-full h-full
+        rounded-full
+        object-cover
+        ring-2 ring-neutral-600
+        ring-offset-4 ring-offset-neutral-900
+        shadow-md shadow-black/40
+        transition-opacity duration-300 ease-in-out
+        opacity-100 group-hover:opacity-0
+      "
+    />
 
-        <div>
-          <p className="text-base font-semibold text-neutral-100 text-center md:text-left">
-            Gabriel
-          </p>
-          <p className="text-sm text-neutral-400">
-            Desarrollador de software
-          </p>
-        </div>
-      </div>
+    {/* Foto al hacer hover */}
+    <img
+      src="./foto2.png"
+      alt="Foto alternativa de Gabi"
+      className="
+        absolute inset-0
+        w-full h-full
+        rounded-full
+        object-cover
+        ring-2 ring-neutral-600
+        ring-offset-4 ring-offset-neutral-900
+        shadow-md shadow-black/40
+        transition-opacity duration-300 ease-in-out
+        opacity-0 group-hover:opacity-100
+      "
+    />
+  </div>
+
+  <div>
+    <p className="text-base font-semibold text-neutral-100 text-center md:text-left">
+      Gabriel
+    </p>
+    <p className="text-sm text-neutral-400">
+      Desarrollador de software
+    </p>
+  </div>
+</div>
+
 
       {/* Sobre mí */}
       <div className="

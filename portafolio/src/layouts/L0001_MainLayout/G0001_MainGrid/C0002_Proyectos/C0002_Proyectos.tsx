@@ -6,6 +6,7 @@ import { C0000_TarjetaInteractivaBase } from "../../../../components/Tarjetas/C0
 interface C0002_ProyectosProps {
   activa: boolean;
   onToggle: () => void;
+  onClose: () => void;
 }
 // endregion
 
@@ -17,6 +18,7 @@ export function C0002_Proyectos(props: C0002_ProyectosProps) {
       resumen="Aplicaciones desarrolladas por iniciativa propia."
       activa={props.activa}
       onToggle={props.onToggle}
+      onClose={props.onClose}
     >
       <p><strong>Reservo</strong></p>
       <p>

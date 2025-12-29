@@ -1,17 +1,13 @@
 //region imports
 import { C0000_TarjetaInteractivaBase } from "../../../../components/Tarjetas/C0000_TarjetaInteractivaBase";
 //endregion
-// region types 
-interface C0001_ExperienciaProps {
-  activa: boolean;
-  onToggle: () => void;
-}
-// endregion
+
 
 // region types
 interface C0001_ExperienciaProps {
   activa: boolean;
   onToggle: () => void;
+  onClose: () => void;
 }
 // endregion
 
@@ -23,6 +19,7 @@ export function C0001_Experiencia(props: C0001_ExperienciaProps) {
       resumen="Desarrollo de aplicaciones web en entornos reales."
       activa={props.activa}
       onToggle={props.onToggle}
+      onClose={props.onClose}
     >
       <p>
         <strong>Software Developer — Wortach</strong>

@@ -2,8 +2,9 @@
 interface C0000_TarjetaInteractivaBaseProps {
   titulo: string;
   activa: boolean;
-  onToggle: () => void;
   resumen: string;
+  onToggle: () => void;
+  onClose?: () => void;
   children: React.ReactNode;
 }
 // endregion
@@ -13,37 +14,58 @@ export function C0000_TarjetaInteractivaBase(
   props: C0000_TarjetaInteractivaBaseProps
 ) {
   return (
-    <section
-      onClick={props.onToggle}
-      className={`
-        cursor-pointer
-        rounded-xl
-        border
-        border-neutral-800
-        bg-neutral-900/60
-        p-6
-        transition-all
-        duration-300
+  <section
+    onClick={!props.activa ? props.onToggle : undefined}
+    className={`
+      relative
+      rounded-xl
+      border
+      border-neutral-800
+      bg-neutral-900/60
+      p-6
 
-        ${props.activa
-          ? "md:col-span-2 md:row-span-2"
-          : "hover:bg-neutral-900/80"}
-      `}
-    >
-      <h2 className="text-lg font-medium text-neutral-200 mb-4">
-        {props.titulo}
-      </h2>
+      ${props.activa
+        ? "md:col-span-2 md:row-span-2 cursor-default"
+        : "cursor-pointer hover:bg-neutral-900/80"}
+    `}
+  >
+    {/* Botón cerrar */}
+    {props.activa && props.onClose && (
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          props.onClose?.();
+        }}
+        className="
+          absolute
+          top-4
+          right-4
+          text-neutral-400
+          hover:text-neutral-200
+          text-lg
+        "
+        aria-label="Cerrar"
+      >
+        ✕
+      </button>
+    )}
 
-      {props.activa ? (
-        <div className="text-sm text-neutral-300 space-y-3">
-          {props.children}
-        </div>
-      ) : (
-        <p className="text-sm text-neutral-400">
-          {props.resumen}
-        </p>
-      )}
-    </section>
-  );
+    {/* Título */}
+    <h2 className="text-lg font-medium text-neutral-200 mb-4">
+      {props.titulo}
+    </h2>
+
+    {/* Contenido */}
+    {props.activa ? (
+      <div className="text-sm text-neutral-300 space-y-3">
+        {props.children}
+      </div>
+    ) : (
+      <p className="text-sm text-neutral-400">
+        {props.resumen}
+      </p>
+    )}
+  </section>
+);
 }
 // endregion

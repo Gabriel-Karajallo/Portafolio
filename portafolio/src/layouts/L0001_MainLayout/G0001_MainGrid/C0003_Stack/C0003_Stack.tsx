@@ -6,6 +6,7 @@ import { C0000_TarjetaInteractivaBase } from "../../../../components/Tarjetas/C0
 interface C0003_StackProps {
   activa: boolean;
   onToggle: () => void;
+  onClose: () => void;
 }
 // endregion
 
@@ -17,6 +18,7 @@ export function C0003_Stack(props: C0003_StackProps) {
       resumen="Tecnologías que utilizo en proyectos reales."
       activa={props.activa}
       onToggle={props.onToggle}
+      onClose={props.onClose}
     >
       <p><strong>Frontend</strong></p>
       <p>React · TypeScript · Tailwind</p>

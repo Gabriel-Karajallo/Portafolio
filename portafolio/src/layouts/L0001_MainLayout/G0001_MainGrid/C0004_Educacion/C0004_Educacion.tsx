@@ -6,6 +6,7 @@ import { C0000_TarjetaInteractivaBase } from "../../../../components/Tarjetas/C0
 interface C0004_EducacionProps {
   activa: boolean;
   onToggle: () => void;
+  onClose: () => void;
 }
 // endregion
 
@@ -17,6 +18,7 @@ export function C0004_Educacion(props: C0004_EducacionProps) {
       resumen="Formación técnica y aprendizaje continuo."
       activa={props.activa}
       onToggle={props.onToggle}
+      onClose={props.onClose}
     >
       <p><strong>Desarrollo de Aplicaciones Web</strong></p>
       <p>Formación Profesional</p>

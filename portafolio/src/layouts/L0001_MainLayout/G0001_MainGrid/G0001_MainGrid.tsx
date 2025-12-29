@@ -18,11 +18,7 @@ export function G0001_MainGrid() {
   const [tarjetaActiva, setTarjetaActiva] =
     useState<TarjetaActiva>(null);
 
-  const alternarTarjeta = (clave: TarjetaActiva) => {
-    setTarjetaActiva(
-      tarjetaActiva === clave ? null : clave
-    );
-  };
+  const cerrarTarjeta = () => setTarjetaActiva(null);
 
   return (
     <div
@@ -33,30 +29,39 @@ export function G0001_MainGrid() {
         grid-cols-1
         gap-6
         md:grid-cols-2
-        md:grid-rows-2
-        md:gap-8
-        md:h-[70%]
       "
     >
-      <C0001_Experiencia
-        activa={tarjetaActiva === "experiencia"}
-        onToggle={() => alternarTarjeta("experiencia")}
-      />
+      {(tarjetaActiva === null || tarjetaActiva === "experiencia") && (
+        <C0001_Experiencia
+          activa={tarjetaActiva === "experiencia"}
+          onToggle={() => setTarjetaActiva("experiencia")}
+          onClose={cerrarTarjeta}
+        />
+      )}
 
-      <C0002_Proyectos
-        activa={tarjetaActiva === "proyectos"}
-        onToggle={() => alternarTarjeta("proyectos")}
-      />
+      {(tarjetaActiva === null || tarjetaActiva === "proyectos") && (
+        <C0002_Proyectos
+          activa={tarjetaActiva === "proyectos"}
+          onToggle={() => setTarjetaActiva("proyectos")}
+          onClose={cerrarTarjeta}
+        />
+      )}
 
-      <C0003_Stack
-        activa={tarjetaActiva === "stack"}
-        onToggle={() => alternarTarjeta("stack")}
-      />
+      {(tarjetaActiva === null || tarjetaActiva === "stack") && (
+        <C0003_Stack
+          activa={tarjetaActiva === "stack"}
+          onToggle={() => setTarjetaActiva("stack")}
+          onClose={cerrarTarjeta}
+        />
+      )}
 
-      <C0004_Educacion
-        activa={tarjetaActiva === "educacion"}
-        onToggle={() => alternarTarjeta("educacion")}
-      />
+      {(tarjetaActiva === null || tarjetaActiva === "educacion") && (
+        <C0004_Educacion
+          activa={tarjetaActiva === "educacion"}
+          onToggle={() => setTarjetaActiva("educacion")}
+          onClose={cerrarTarjeta}
+        />
+      )}
     </div>
   );
 }
