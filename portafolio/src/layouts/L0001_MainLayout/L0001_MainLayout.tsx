@@ -1,5 +1,6 @@
 // region imports
 import type { ReactNode } from "react";
+import { L0002_ParticulasFondo } from "../Background/L0002_ParticulasFondo";
 // endregion
 
 // region types
@@ -11,18 +12,25 @@ interface L0001_MainLayoutProps {
 // region component
 export function L0001_MainLayout(props: L0001_MainLayoutProps) {
   return (
-    <div className="
-  w-screen
-  h-screen
-  bg-neutral-900
-  flex
-  items-center
-  justify-center
-  overflow-hidden
-  md:overflow-hidden
-">
-      
+    <div
+      className="
+        relative
+        w-screen
+        h-screen
+        bg-neutral-900
+        flex
+        items-center
+        justify-center
+        overflow-hidden
+      "
+    >
+      {/* Fondo animado */}
+      <L0002_ParticulasFondo />
+
+      {/* Contenido */}
       <div className="
+  relative
+  z-10
   w-full
   h-full
   md:max-w-7xl
@@ -32,6 +40,7 @@ export function L0001_MainLayout(props: L0001_MainLayoutProps) {
   md:flex-row
   border
   border-neutral-800
+  bg-neutral-900
   rounded-none
   md:rounded-2xl
   p-4
@@ -42,7 +51,6 @@ export function L0001_MainLayout(props: L0001_MainLayoutProps) {
 ">
         {props.children}
       </div>
-
     </div>
   );
 }
