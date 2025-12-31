@@ -3,7 +3,8 @@ import {
   Instagram,
   Linkedin,
   Mail,
-  Github
+  Github,
+  FileText
 } from "lucide-react";
 // endregion
 
@@ -12,6 +13,7 @@ export const icons = {
   instagram: Instagram,
   linkedin: Linkedin,
   email: Mail,
-  github: Github
+  github: Github,
+  fileText: FileText
 };
 // endregion
