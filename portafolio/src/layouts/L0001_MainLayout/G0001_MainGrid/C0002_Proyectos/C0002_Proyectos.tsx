@@ -1,35 +1,33 @@
 // region imports
+import { useState } from "react";
 import { C0000_TarjetaInteractivaBase } from "../../../../components/Tarjetas/C0000_TarjetaInteractivaBase";
-// endregion
-
-// region types
-interface C0002_ProyectosProps {
-  activa: boolean;
-  onToggle: () => void;
-  onClose: () => void;
-}
+import { D0002_DialogoDetalle } from "../../../../components/Dialogos/D0002_DialogoDetalle";
 // endregion
 
 // region component
-export function C0002_Proyectos(props: C0002_ProyectosProps) {
+export function C0002_Proyectos() {
+  const [abierto, setAbierto] = useState(false);
+
   return (
-    <C0000_TarjetaInteractivaBase
-      titulo="Proyectos"
-      resumen="Aplicaciones desarrolladas por iniciativa propia."
-      activa={props.activa}
-      onToggle={props.onToggle}
-      onClose={props.onClose}
-    >
-      <p><strong>Reservo</strong></p>
-      <p>
-        Aplicación de reservas para negocios con gestión automática de citas.
-      </p>
-      <ul className="list-disc list-inside text-neutral-400">
-        <li>React · TypeScript · Firebase</li>
-        <li>Roles: empresa y cliente</li>
-        <li>PWA sin aprobación manual</li>
-      </ul>
-    </C0000_TarjetaInteractivaBase>
+    <>
+      <C0000_TarjetaInteractivaBase
+        titulo="Proyectos"
+        resumen="Estos son los proyectos más importantes que he desarrollado."
+        onAbrir={() => setAbierto(true)}
+      />
+
+      <D0002_DialogoDetalle
+        abierto={abierto}
+        titulo="Proyectos destacados"
+        subtitulo="Aplicaciones y productos desarrollados por iniciativa propia o profesional."
+        onCerrar={() => setAbierto(false)}
+      >
+        <p>
+          Aquí puedes listar proyectos, explicar objetivos, tecnologías usadas
+          y qué problemas resolvía cada uno.
+        </p>
+      </D0002_DialogoDetalle>
+    </>
   );
 }
 // endregion

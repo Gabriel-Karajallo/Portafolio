@@ -63,7 +63,7 @@ export function S0001_Sidebar() {
 
         <div className="text-center md:text-left">
           <p className="text-base font-semibold text-neutral-100">
-            Gabriel
+            Gabriel Karajallo
           </p>
           <p className="text-sm text-neutral-400">
             Desarrollador de software

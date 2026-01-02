@@ -1,27 +1,13 @@
 // region imports
-import { useState } from "react";
 import { C0001_Experiencia } from "./C0001_Experiencia/C0001_Experiencia";
 import { C0002_Proyectos } from "./C0002_Proyectos/C0002_Proyectos";
 import { C0003_Stack } from "./C0003_Stack/C0003_Stack";
 import { C0004_Educacion } from "./C0004_Educacion/C0004_Educacion";
-// endregion
-
-// region types
-type TarjetaActiva =
-  | "experiencia"
-  | "proyectos"
-  | "stack"
-  | "educacion"
-  | null;
+import { C0005_SobreMi } from "./C0005_SobreMi/C0005_SobreMi";
 // endregion
 
 // region component
 export function G0001_MainGrid() {
-  const [tarjetaActiva, setTarjetaActiva] =
-    useState<TarjetaActiva>(null);
-
-  const cerrarTarjeta = () => setTarjetaActiva(null);
-
   return (
     <div
       className="
@@ -44,37 +30,11 @@ export function G0001_MainGrid() {
           gap-6
         "
       >
-        {(tarjetaActiva === null || tarjetaActiva === "experiencia") && (
-          <C0001_Experiencia
-            activa={tarjetaActiva === "experiencia"}
-            onToggle={() => setTarjetaActiva("experiencia")}
-            onClose={cerrarTarjeta}
-          />
-        )}
-
-        {(tarjetaActiva === null || tarjetaActiva === "proyectos") && (
-          <C0002_Proyectos
-            activa={tarjetaActiva === "proyectos"}
-            onToggle={() => setTarjetaActiva("proyectos")}
-            onClose={cerrarTarjeta}
-          />
-        )}
-
-        {(tarjetaActiva === null || tarjetaActiva === "stack") && (
-          <C0003_Stack
-            activa={tarjetaActiva === "stack"}
-            onToggle={() => setTarjetaActiva("stack")}
-            onClose={cerrarTarjeta}
-          />
-        )}
-
-        {(tarjetaActiva === null || tarjetaActiva === "educacion") && (
-          <C0004_Educacion
-            activa={tarjetaActiva === "educacion"}
-            onToggle={() => setTarjetaActiva("educacion")}
-            onClose={cerrarTarjeta}
-          />
-        )}
+        <C0001_Experiencia />
+        <C0002_Proyectos />
+        <C0003_Stack />
+        <C0004_Educacion />
+        <C0005_SobreMi />
       </div>
     </div>
   );
