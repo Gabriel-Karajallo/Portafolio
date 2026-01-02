@@ -4,7 +4,9 @@ interface C0000_TarjetaInteractivaBaseProps {
   onAbrir: () => void;
 }
 
-export function C0000_TarjetaInteractivaBase(props: C0000_TarjetaInteractivaBaseProps) {
+export function C0000_TarjetaInteractivaBase(
+  props: C0000_TarjetaInteractivaBaseProps
+) {
   return (
     <section
       onClick={props.onAbrir}
@@ -16,9 +18,12 @@ export function C0000_TarjetaInteractivaBase(props: C0000_TarjetaInteractivaBase
         px-6 py-8
         min-h-[180px]
 
-        transition-all
+        transition-all duration-300 ease-out
         hover:bg-neutral-900/80
         hover:-translate-y-0.5
+
+        hover:border-neutral-400
+        hover:shadow-[0_0_0_1px_rgba(255,255,255,0.15),0_0_20px_rgba(255,255,255,0.08)]
       "
     >
       <h2 className="text-lg font-medium text-neutral-200 mb-3">
