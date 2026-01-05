@@ -9,7 +9,7 @@ export function C0001_Experiencia() {
   return (
     <>
       <C0000_TarjetaInteractivaBase
-        titulo="Experiencia"
+        titulo="Experiencia laboral"
         resumen="Conoce toda mi trayectoria profesional, dónde he trabajado y qué he logrado."
         onAbrir={() => setAbierto(true)}
       />
@@ -75,7 +75,7 @@ export function C0001_Experiencia() {
 
       <div>
         <p className="text-base font-semibold text-neutral-100">
-          Desarrollador Frontend — Angular
+          Desarrollador Frontend — Insinno
         </p>
         <p className="text-xs text-neutral-500 mt-0.5">
           Julio 2024 — Diciembre 2024

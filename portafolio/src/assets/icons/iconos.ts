@@ -18,7 +18,17 @@ import {
   Component,
   Globe2,
   BookOpen,
-  GraduationCap
+  GraduationCap,
+  ExternalLink, 
+  User,
+  Lightbulb,
+  Heart,
+  MailCheck,
+  Sparkles,
+  Gamepad,
+  Activity,
+  BookOpenCheck
+  
 } from "lucide-react";
 // endregion
 
@@ -42,6 +52,16 @@ export const icons = {
   component: Component,
   globe: Globe2,
   BookOpen: BookOpen,
-  GraduationCap: GraduationCap
+  GraduationCap: GraduationCap,
+  externalLink: ExternalLink,
+  user: User,
+  lightbulb: Lightbulb,
+  heart: Heart,
+  mail: MailCheck,
+  sparkles: Sparkles,
+  gamepad: Gamepad,
+  activity: Activity,
+  bookOpenCheck: BookOpenCheck
+
 };
 // endregion
