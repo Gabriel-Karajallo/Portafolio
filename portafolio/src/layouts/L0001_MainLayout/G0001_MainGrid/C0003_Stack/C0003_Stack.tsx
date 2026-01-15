@@ -45,7 +45,7 @@ export function C0003_Stack() {
                   { nombre: ".NET", imagen: "/stack/net.png" },
                   { nombre: "C#", imagen: "/stack/c.png" },
                   { nombre: "React", imagen: "/stack/react.png" },
-                  { nombre: "TypeScript", imagen: "/stack/typescript.png" },
+                  { nombre: "TypeScript", imagen: "/stack/ts.png" },
                   { nombre: "SQL Server", imagen: "/stack/sqlserver.png" },
                   { nombre: "Entity Framework", imagen: "/stack/efcore.png" },
                 ].map((tech) => (
